@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="bg">
+        <h1>一日採点</h1>
+    </div>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <!-- <th scope="col">#</th> -->
+                <th scope="col">時間</th>
+                <th scope="col">運動、勉強、仕事、休憩、趣味、休憩、睡眠、娯楽、その他　の中から一つ選びフィールド内に記述してください</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0~1時</td>　
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                <td>1~2時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                <td>2~3時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <!-- <tr>
+                
+                <td>3~4時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>4~5時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>5~6時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>6~7時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>7~8時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>8~9時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>9~10時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>10~11時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>11~12時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>12~13時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>13~14時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>14~15時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>15~16時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>16~17時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>17~18時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>18~19時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>19~20時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>20~21時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>21~22時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>22~23時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr>
+            <tr>
+                
+                <td>23~24時</td>
+                <td><input type="text" class="text_form"></td>
+            </tr> -->
+        </tbody>
+    </table>
+    <p id="output"></p>
+    <input type="button" value="button" onclick="buttonClick()">
+    <a href="/users/logout">Logout</a>
+
+</body>
+<script>
+let text_form = document.getElementsByClassName('text_form');
+let output = document.getElementById('output');
+
+
+function buttonClick(){
+    var number = 0
+    
+    for (let i = 0; i < text_form.length; i++) {
+        if (text_form.item(i).value === "運動") {
+            number = number + 5;
+        }
+        else if (text_form.item(i).value === "勉強") {
+            number = number + 5;
+        }
+        else if (text_form.item(i).value === "仕事") {
+            number = number + 5;
+        } 
+        else if (text_form.item(i).value === "趣味") {
+            number = number + 5;
+        }   
+        else if (text_form.item(i).value === "休憩" || text_form.item(i).value === "睡眠") {
+            number = number + 0;
+        } 
+        else if (text_form.item(i).value === "娯楽") {
+            number = number - 3;
+        }
+        else {
+            number = number + O;
+        } 
+    }
+
+    if(number > 14) {
+        output.innerHTML = `あなたの点数は${number}点です。全知全能とはあなたのことだったのですね。`
+     } else if(number > 10) {
+         output.innerHTML = `あなたの点数は${number}点です。 良いです。`
+     } else if(number > 5) {
+         output.innerHTML = `あなたの点数は${number}点です。 普通です。`
+     } else {
+         output.innerHTML = `あなたの点数は${number}点です。便所コオロギ以下の存在です。`
+     }
+    
+    
+    
+
+}
+</script>　
+
+</html>

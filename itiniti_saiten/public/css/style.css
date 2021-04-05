@@ -1,0 +1,21 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("pocket-watch-3156771_1920.jpg");
+    /* Full height */
+    height: 50%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div h1{
+    text-align: center;
+    color: black;
+    font-size: 100px;
+}
