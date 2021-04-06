@@ -25,14 +25,12 @@ var options = {
       } 
     } 
   };
-  if(process.env.MONGODB_URI) {
+if(process.env.MONGODB_URI) {
     mongoose.connect(process.env.MONGODB_URI, options);
-  } else {
-  
+} else {
     mongoose.connect('mongodb://localhost/test',{useNewUrlParser: true, useUnifiedTopology : true})
     .then(() => console.log('connected,,'))
     .catch((err)=> console.log(err));
-  
   }
 
 //EJS
